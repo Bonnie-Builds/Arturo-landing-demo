@@ -1,0 +1,675 @@
+apiVersion: design-system.ai/v1
+kind: DesignBlueprint
+metadata:
+  generated_at: "2025-12-10T12:00:00Z"
+  reference: "https://nvg8.io/"
+  business_context: "Arturo - AI Business Automation"
+
+blueprint:
+  summary:
+    aesthetic: "Futuristic Minimalist"
+    mood: "Powerful, Precise, Tech-Forward"
+    hierarchy: "Typography-led, supported by kinetic visual strips"
+    visual_weight: "Heavy text elements balanced by negative space"
+    description: >
+      The design uses a stark dark mode foundation to project power and modernity. 
+      The core visual hook is the integration of small, inline graphics within 
+      large-scale typography, suggesting seamless integration (a perfect metaphor for Arturo's AI). 
+      Layouts are single-column focused, guiding the user linearly through the narrative 
+      with rhythmic interruptions of scrolling marquees.
+
+  layout:
+    structure: |
+      HEADER
+        logo [left] | nav_links [center] | cta_group [right]
+      
+      HERO
+        [spacer]
+        [headline_large_centered] (Automate Your Business...)
+        [subheadline_centered] (Purpose-built AI agents...)
+        [cta_button_centered] (Get Started)
+        [scrolling_marquee_full_width] (Tool Integrations)
+      
+      NARRATIVE_SECTION_1
+        [large_text_block_with_inline_icons] (The problem statement)
+        [visual_grid_collage] (Abstract representation of chaos/manual work)
+      
+      NARRATIVE_SECTION_2
+        [split_layout_text_left_visual_right]
+        [large_text_statement] (The solution/Arturo approach)
+      
+      FEATURES_MARQUEE
+        [scrolling_text_bands] (Capabilities)
+      
+      FAQ_SECTION
+        [headline_left]
+        [accordion_list_right]
+      
+      FOOTER
+        [large_cta_block]
+        [links_grid]
+        [copyright_row]
+
+    spacing:
+      vertical_section_gap: "120px" # Generous breathing room
+      horizontal_gutter: "24px"
+      max_width_text: "900px" # Wide text columns for impact
+      max_width_container: "1440px"
+
+  color_system:
+    primary:
+      hex: "#C7FF69" # Lime Green (extracted from reference CTA)
+      usage: "Primary CTAs, key highlights, inline icons"
+      mood: "Electric, growth, energy"
+    secondary:
+      hex: "#FFFFFF"
+      usage: "Headings, body text, icons"
+      mood: "Clarity, starkness"
+    background:
+      hex: "#050505" # Near black
+      usage: "Page background"
+      mood: "Premium dark mode"
+    surface:
+      hex: "#141414"
+      usage: "Card backgrounds, secondary sections"
+    border:
+      hex: "#333333"
+      usage: "Subtle dividers, button borders"
+    text:
+      primary: "#FFFFFF"
+      secondary: "#A1A1A1"
+
+  typography:
+    families:
+      primary: "Aeonik, Inter, system-ui, sans-serif" # Reference font
+      secondary: "Inter, system-ui, sans-serif"
+    scale:
+      h1:
+        size: "clamp(48px, 8vw, 96px)"
+        weight: 700
+        line_height: 1.05
+        letter_spacing: "-0.03em"
+      h2:
+        size: "clamp(32px, 5vw, 64px)"
+        weight: 500
+        line_height: 1.1
+        letter_spacing: "-0.02em"
+      h3:
+        size: "32px"
+        weight: 500
+        line_height: 1.2
+      body_large:
+        size: "24px"
+        weight: 400
+        line_height: 1.4
+      body:
+        size: "18px"
+        weight: 400
+        line_height: 1.5
+      nav:
+        size: "15px"
+        weight: 500
+        text_transform: "uppercase"
+
+  components:
+    navbar:
+      structure:
+        - logo: "Arturo (Text or Icon)"
+        - nav_links: ["Platform", "Solutions", "Pricing", "Resources"]
+        - cta: "Get Started"
+      style: "Fixed, glassmorphism blur background (rgba(5,5,5,0.8))"
+      height: "80px"
+
+    hero:
+      headline: "Center aligned, massive scale (H1)"
+      subhead: "Center aligned, grey text, max-width 600px"
+      cta: "Pill-shaped, lime green background, black text"
+      
+    inline_icon_text:
+      description: "Text paragraphs that include height-aligned icons replacing or supplementing words"
+      example: "We automate your [icon:slack] and [icon:salesforce] workflows."
+      icon_size: "1.2em (match line height)"
+      
+    scrolling_marquee:
+      content: "Infinite horizontal scroll of partner logos or tool icons"
+      style: "Grayscale opacity 0.5 -> Hover full color opacity 1"
+      gap: "64px"
+      
+    accordion:
+      style: "Minimalist, top border only"
+      trigger: "Flex row, text left, plus icon right"
+      content: "Expandable plain text"
+      padding: "24px 0"
+      
+    buttons:
+      primary:
+        bg: "#C7FF69"
+        text: "#000000"
+        radius: "999px" # Full pill
+        padding: "16px 32px"
+        font_weight: 600
+        hover: "Transform scale(1.05), brightness(1.1)"
+      secondary:
+        bg: "transparent"
+        border: "1px solid #333333"
+        text: "#FFFFFF"
+        radius: "999px"
+        padding: "16px 32px"
+        hover: "Border #FFFFFF"
+
+  media:
+    icons:
+      style: "Flat, monochrome or duotone (Green/White)"
+      usage: "Inline with text, inside marquees"
+    images:
+      style: "High contrast, dark overlaid, rounded corners (16px)"
+      treatment: "Subtle noise texture overlay"
+
+  css_foundation:
+    spacing:
+      xs: "4px"
+      sm: "12px"
+      md: "24px"
+      lg: "48px"
+      xl: "96px"
+      xxl: "160px"
+    radius:
+      sm: "8px"
+      md: "16px"
+      full: "9999px"
+    transitions:
+      default: "all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+
+  animations:
+    scroll_reveal:
+      type: "fade-up"
+      distance: "40px"
+      duration: "0.8s"
+      easing: "ease-out"
+    marquee:
+      type: "linear-infinite-scroll"
+      speed: "30s"
+    hover_lift:
+      transform: "translateY(-4px)"
+      duration: "0.3s"
+
+  responsive:
+    mobile:
+      h1_size: "48px"
+      nav: "Hamburger menu (bottom right or top right)"
+      layout: "Stack all grids to 1 column"
+      padding: "16px horizontal"
+    tablet:
+      h1_size: "64px"
+      layout: "2 column grids where applicable"
+
+  premium_enhancements:
+    - name: "Interactive Cursor"
+      description: "Subtle glow following cursor on dark background"
+    - name: "Text Reveal"
+      description: "Char-by-char or word-by-word reveal for key hero statement"
+    - name: "Glass Cards"
+      description: "Use 5% white opacity with blur for cards instead of solid colors"
+
+  integrity_notes:
+    - "Ensure 'Aeonik' font license or use 'Inter' with tight tracking (-0.03em) to mimic the look."
+    - "The Lime Green (#C7FF69) is crucial for the 'electric' feel against the black."
+    - "Do not clutter—white space is a key design element here."
+
+
+business:
+  name: "Arturo"
+  type: "AI Business Automation Platform"
+  primary_cta: "Request Access"
+
+sections:
+  - section: "Navbar"
+    goal: "Navigation and immediate conversion access"
+    content:
+      logo: "Arturo (Text logotype)"
+      links: ["Platform", "Solutions", "Security", "Pricing"]
+      cta: "Login"
+      primary_cta: "Request Access"
+    ui_elements:
+      - "Glassmorphism background effect"
+      - "Monospace typography for links"
+      - "High-contrast lime green primary button"
+    notes: "Added 'Security' to nav links as it's a top-level concern for this audience."
+
+  - section: "Hero"
+    goal: "Establish authority and immediate value proposition"
+    content:
+      headline: "Scale Operations.\nNot Headcount."
+      subheadline: "The operating system for the AI-native enterprise. Orchestrate autonomous agents to handle complex workflows with human-level reliability."
+      primary_cta: "Start Free Pilot"
+      secondary_cta: "Book a Demo"
+      trust_signal: "Trusted by ops leaders at high-growth startups"
+    ui_elements:
+      - "Massive, screen-filling typography (H1)"
+      - "Dark mode background (#000000)"
+      - "Lime green accent on the period"
+      - "Subtle glowing grid background"
+    notes: "Changed CTA to 'Start Free Pilot' to imply lower barrier than 'Request Access'. Added 'Book Demo' for enterprise buyers."
+
+  - section: "Social Proof (Marquee)"
+    goal: "Build trust with rhythm and motion"
+    content:
+      intro_text: "Powering critical infrastructure for:"
+      logos: ["TechFlow", "Ventura", "ScaleUp", "Nebula", "Orbit"]
+    ui_elements:
+      - "Infinite scrolling horizontal marquee"
+      - "Logos in monochrome (grey/white)"
+      - "Fast-paced animation"
+    notes: "Added subtle intro text above logos to frame them as 'critical infrastructure' users, not just casual users."
+
+  - section: "Problem Narrative"
+    goal: "Agitate the pain of manual work"
+    content:
+      text_block: "Your team wasn't hired to be human middleware [icon:link]. They are drowning in spreadsheets [icon:table], manual data entry, and repetitive glue-work. It's time to stop the burnout."
+    ui_elements:
+      - "Large, editorial-style typography (40px+)"
+      - "Inline icons (Lime Green) replacing specific words"
+      - "Single column layout"
+      - "High contrast white text on black"
+    notes: "Kept as is - strong emotional hook."
+
+  - section: "ROI (The Efficiency Dividend)"
+    goal: "Quantify the value (Logic vs Emotion)"
+    content:
+      headline: "The ROI of Autonomy"
+      stats:
+        - value: "20h+"
+          label: "Saved per employee/week"
+        - value: "99.9%"
+          label: "Accuracy on data entry"
+        - value: "10x"
+          label: "Faster lead-to-response"
+    ui_elements:
+      - "Large counting numbers in Lime Green"
+      - "Grid layout with minimal borders"
+    notes: "New section. Essential for B2B justification. Places logic right after the emotional problem narrative."
+
+  - section: "How it Works (The Process)"
+    goal: "Demystify the 'Magic'"
+    content:
+      headline: "From Chaos to Orchestration"
+      steps:
+        - step: "01. Connect"
+          desc: "Link your stack (Slack, CRM, DB) in one click."
+        - step: "02. Train"
+          desc: "Show the agent what 'good' looks like with natural language."
+        - step: "03. Delegate"
+          desc: "Set the agent loose with defined guardrails."
+    ui_elements:
+      - "Horizontal timeline or step cards"
+      - "Connecting lines that animate on scroll"
+    notes: "Replaces generic 'Solution Overview'. Breaks down the abstract 'Agent' concept into actionable steps."
+
+  - section: "Features (The Builder)"
+    goal: "Showcase the 'No-Code' capability and control"
+    content:
+      headline: "Build without breaking"
+      features:
+        - title: "Visual Workflow Builder"
+          desc: "Drag, drop, and connect. No Python required."
+        - title: "Human-in-the-loop"
+          desc: "Agents pause for approval when confidence is low."
+        - title: "Observability Dashboard"
+          desc: "Trace every decision your agents make in real-time."
+    ui_elements:
+      - "Minimalist UI mockups of the builder interface (dark mode)"
+      - "Focus on the 'Pause for approval' UI element to emphasize safety"
+    notes: "Added 'Observability' - Ops teams need to know they can debug if things go wrong."
+
+  - section: "Integrations"
+    goal: "Demonstrate compatibility"
+    content:
+      headline: "Plug-and-play with your stack"
+      tools: ["Slack", "Salesforce", "Notion", "HubSpot", "Jira", "Linear"]
+    ui_elements:
+      - "Grid layout"
+      - "Neon/Lime hover effects on logos"
+
+  - section: "Use Cases"
+    goal: "Ground the tech in reality"
+    content:
+      headline: "Blueprints for every department"
+      cases:
+        - title: "RevOps"
+          description: "Enrich leads and route them to sales instantly."
+          metric: "Zero lead leakage"
+        - title: "HR & People"
+          description: "Automate onboarding checklists and provisioning."
+          metric: "Day 1 readiness"
+        - title: "Customer Success"
+          description: "Triage tickets and draft responses automatically."
+          metric: "<5 min response time"
+    ui_elements:
+      - "Tabbed interface"
+      - "Added 'metric' badge to each card for proof"
+
+  - section: "Security & Compliance"
+    goal: "Risk Reversal (Crucial for B2B)"
+    content:
+      headline: "Enterprise-grade trust"
+      badges: ["SOC2 Type II", "GDPR", "AES-256", "SSO"]
+      description: "Your data never trains our public models. Deployment options available for VPC."
+    ui_elements:
+      - "Shield iconography"
+      - "Subtle lock animation"
+      - "Monochrome/muted palette to convey seriousness"
+    notes: "New section. Must appear before pricing to clear objections."
+
+  - section: "Pricing"
+    goal: "Transparent tier differentiation"
+    content:
+      headline: "Invest in efficiency"
+      tiers:
+        - name: "Starter"
+          price: "$499/mo"
+          features: ["5 Agents", "Standard Integrations", "Email Support"]
+        - name: "Scale"
+          price: "$1,299/mo"
+          features: ["Unlimited Agents", "Custom Actions", "Priority Support"]
+          highlight: true
+          cta: "Start Free Trial"
+        - name: "Enterprise"
+          price: "Custom"
+          features: ["SSO", "SLA", "Dedicated Solutions Engineer", "VPC Deployment"]
+          cta: "Contact Sales"
+    ui_elements:
+      - "Three-column grid"
+      - "Scale tier highlighted with Lime Green border"
+
+  - section: "FAQ"
+    goal: "Final Objection Handling"
+    content:
+      headline: "Common Questions"
+      questions:
+        - q: "Do I need engineering to set this up?"
+          a: "No. Arturo is designed for Ops professionals. If you can use Zapier, you can use Arturo."
+        - q: "Is my data safe?"
+          a: "Yes. We are SOC2 compliant and offer on-premise deployment for enterprise."
+    ui_elements:
+      - "Simple accordion list"
+      - "Clean typography"
+
+  - section: "Footer CTA"
+    goal: "Final conversion push"
+    content:
+      headline: "The future is automated."
+      subheadline: "Join the high-performing teams building on Arturo."
+      primary_cta: "Start Building Now"
+      secondary_text: "14-day free trial. No credit card required."
+    ui_elements:
+      - "Large, centered text"
+      - "Background gradient"
+    notes: "Added 'No credit card required' microcopy to reduce friction."
+
+  - section: "Footer"
+    goal: "Legal and secondary links"
+    content:
+      links: ["Company", "Careers", "Legal", "Twitter", "LinkedIn"]
+      copyright: "© 2024 Arturo Inc."
+
+concept:
+  name: "Kinetic Command Nexus"
+  section: "Hero"
+  mood: "Dominant, precise, electric"
+
+  container:
+    classes: "relative min-h-screen w-full bg-[#050505] overflow-hidden flex flex-col justify-center items-center isolation-auto"
+
+  content:
+    wrapper: "relative z-20 w-full max-w-[90rem] mx-auto px-6 md:px-12 flex flex-col items-center text-center"
+    layout: "flex flex-col items-center gap-12"
+
+  headline:
+    text: "Orchestrate Intelligence."
+    classes: "text-6xl md:text-8xl lg:text-[10rem] leading-[0.9] font-bold tracking-tighter text-white mb-2"
+
+  subheadline:
+    text: "The operating system for autonomous enterprise agents. Design, deploy, and direct swarms that execute complex business logic with surgical precision."
+    classes: "text-lg md:text-xl text-neutral-400 max-w-2xl font-light tracking-wide leading-relaxed"
+
+  cta_primary:
+    text: "Initialize System"
+    classes: "group relative inline-flex items-center gap-3 px-8 py-4 bg-[#C7FF69] text-black rounded-sm font-semibold tracking-tight hover:bg-[#b5e85e] transition-all duration-300 hover:shadow-[0_0_20px_-5px_#C7FF69]"
+
+  cta_secondary:
+    text: "View Documentation"
+    classes: "group inline-flex items-center gap-2 px-6 py-4 text-neutral-400 hover:text-white transition-colors duration-300 font-mono text-sm border-b border-transparent hover:border-[#C7FF69]"
+
+  visual_elements:
+    # The Background Grid (The Matrix)
+    - name: "Perspective Grid"
+      type: "decorative_background"
+      classes: "absolute inset-0 bg-[linear-gradient(to_right,#141414_1px,transparent_1px),linear-gradient(to_bottom,#141414_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-30 pointer-events-none"
+      position: "fixed background"
+
+    # The "Brain" Glow
+    - name: "Core Glow"
+      type: "gradient_blob"
+      classes: "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40rem] h-[40rem] bg-[#C7FF69] rounded-full blur-[120px] opacity-[0.08] pointer-events-none"
+      position: "center behind text"
+
+    # Floating "Agent" Nodes
+    - name: "Agent Node Left"
+      type: "floating_card"
+      classes: "absolute top-20 left-10 md:left-20 lg:left-40 p-4 border border-white/10 bg-black/40 backdrop-blur-md rounded-lg w-48 hidden md:block"
+      position: "floating left"
+    
+    - name: "Agent Node Right"
+      type: "floating_card"
+      classes: "absolute bottom-40 right-10 md:right-20 lg:right-40 p-4 border border-white/10 bg-black/40 backdrop-blur-md rounded-lg w-56 hidden md:block"
+      position: "floating right"
+
+    # Connecting Data Streams
+    - name: "Data Stream Vertical"
+      type: "animated_line"
+      classes: "absolute top-0 left-1/2 -translate-x-1/2 w-px h-full bg-gradient-to-b from-transparent via-[#C7FF69]/30 to-transparent"
+      position: "center vertical axis"
+
+  interactions:
+    hover:
+      - element: "cta_primary"
+        effect: "Glow intensifies and arrow moves"
+        classes: "hover:shadow-[0_0_30px_-5px_#C7FF69]"
+    
+    entrance:
+      - element: "headline"
+        animation: "Reveal up with stagger"
+        classes: "animate-in fade-in slide-in-from-bottom-8 duration-700 ease-out"
+      - element: "subheadline"
+        animation: "Fade in delayed"
+        classes: "animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200 fill-mode-forwards"
+
+  component_structure: |
+    <section className="{container.classes}">
+      {/* Ambient Background */}
+      <div className="{visual_elements[0].classes}" /> {/* Grid */}
+      <div className="{visual_elements[1].classes}" /> {/* Glow */}
+      <div className="{visual_elements[4].classes}" /> {/* Vertical Line */}
+
+      {/* Floating Agent Status Nodes (Decorative) */}
+      <div className="{visual_elements[2].classes} animate-float-slow">
+        <div className="flex items-center gap-3 mb-2">
+          <div className="w-2 h-2 rounded-full bg-[#C7FF69] animate-pulse" />
+          <span className="text-xs font-mono text-neutral-400">AGENT_01: ACTIVE</span>
+        </div>
+        <div className="space-y-1">
+          <div className="h-1 w-full bg-neutral-800 rounded-full overflow-hidden">
+            <div className="h-full w-3/4 bg-[#C7FF69]" />
+          </div>
+          <p className="text-[10px] text-neutral-500 font-mono">Processing payload...</p>
+        </div>
+      </div>
+
+      <div className="{visual_elements[3].classes} animate-float-delayed">
+        <div className="flex items-center justify-between mb-2">
+          <span className="text-xs font-mono text-neutral-400">NETWORK</span>
+          <span className="text-xs font-mono text-[#C7FF69]">98.2%</span>
+        </div>
+        <div className="flex gap-1">
+          <div className="h-6 w-1 bg-[#C7FF69]/20" />
+          <div className="h-6 w-1 bg-[#C7FF69]/40" />
+          <div className="h-6 w-1 bg-[#C7FF69]/80" />
+          <div className="h-6 w-1 bg-[#C7FF69]" />
+          <div className="h-6 w-1 bg-[#C7FF69]/60" />
+        </div>
+      </div>
+
+      {/* Main Content */}
+      <div className="{content.wrapper}">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm mb-8 animate-in fade-in zoom-in duration-500">
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#C7FF69] opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#C7FF69]"></span>
+          </span>
+          <span className="text-xs font-mono text-neutral-300 tracking-widest uppercase">System Online</span>
+        </div>
+
+        <h1 className="{headline.classes}">
+          Orchestrate <br className="hidden md:block" />
+          <span className="text-transparent bg-clip-text bg-gradient-to-b from-white to-white/60">Intelligence.</span>
+        </h1>
+
+        <p className="{subheadline.classes}">
+          {subheadline.text}
+        </p>
+
+        <div className="mt-12 flex flex-col sm:flex-row items-center gap-6 w-full sm:w-auto">
+          <button className="{cta_primary.classes}">
+            {cta_primary.text}
+            <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </button>
+          
+          <button className="{cta_secondary.classes}">
+            <span className="w-4 h-4 border border-current flex items-center justify-center text-[10px] rounded-sm">>_</span>
+            {cta_secondary.text}
+          </button>
+        </div>
+      </div>
+    </section>
+
+
+apiVersion: design-system.ai/v1
+kind: AssetPrompts
+metadata:
+  source_spec: "my-test-project/visuals.yaml"
+  model_target: "general"
+  generated_at: "2025-12-10T12:00:00Z"
+  total_prompts: 6
+
+prompts:
+  - id: "asset-hero-bg"
+    title: "Isometric Kinetic Command Grid"
+    prompt: |
+      Cinematic wide shot of an infinite isometric grid floor fading into deep void black (#050505). The grid lines are razor-thin, matte dark grey (#222222), creating a sense of vast digital space. In the center, a subtle, volumetric fog glow in bio-lume lime green (#C7FF69) rises softly, illuminating the grid lines near the center with a phosphorescent energy. The lighting is internal and moody, feeling like a stealth server room. No floating objects, just the pristine, surgical grid environment. 8k resolution, unreal engine 5 render style, minimal, matte black materials.
+    background: "--no background, but this is a full-frame background image, so --ar 16:9 --tile optional"
+    reference_keywords:
+      - "isometric grid"
+      - "cyberpunk data void"
+      - "digital horizon"
+      - "volumetric fog"
+      - "tron legacy minimal"
+    influence_notes:
+      - "The Matrix digital construct void"
+      - "Linear.app landing page depth"
+      - "Tron Legacy grid aesthetics (but darker)"
+    mood_reference: "Dominant, precise, electric, infinite potential."
+    camera: "Wide angle, isometric projection, sharp focus, 16:9 aspect ratio."
+    variants:
+      - "Top-down orthographic view for flatter texture"
+      - "Version with vertical data beams rising from grid intersections"
+
+  - id: "asset-texture-noise"
+    title: "Digital Data Stream Texture"
+    prompt: |
+      Full frame abstract texture of digital noise and subtle data streams. A deep obsidian black background (#050505) with extremely faint, fine-grain noise. Overlaid are cascading vertical streaks of code-like rain, but very abstract and blurred, in dark grey (#1F1F1F) and very faint traces of lime green (#C7FF69). The texture should feel like 'intelligent static' or a dormant supercomputer screen. Minimal contrast, matte finish, suitable for use as a subtle website section background.
+    background: "--tile --ar 16:9 --no central focus"
+    reference_keywords:
+      - "digital noise texture"
+      - "matrix rain abstract"
+      - "subtle grain"
+      - "dark data pattern"
+    influence_notes:
+      - "TV static but high definition"
+      - "Server rack status lights blurred"
+    mood_reference: "Latent energy, dormant power, raw data."
+    camera: "Macro texture shot, flat field, no depth of field."
+
+  - id: "ui-workflow-builder"
+    title: "Arturo Agent Workflow Interface"
+    prompt: |
+      High-fidelity UI mockup of a dark-mode node-based workflow editor. Orthographic view. The interface background is deep charcoal (#1F1F1F) with a subtle dot grid. Three main cards (nodes) are connected by smooth curved bezier lines. Left node: "Trigger: Email". Center node: "AI Processing" (glowing with a lime green #C7FF69 border and inner pulse). Right node: "Action: CRM Update". The nodes are sleek, matte black panels with white text and small icon indicators. The connecting lines are animated with a small light pulse moving left to right. The overall aesthetic is 'Hacker-Chic Enterprise'—clean, surgical, and high-contrast.
+    background: "--pure black background, isolated UI element, soft ambient shadow"
+    reference_keywords:
+      - "node editor UI"
+      - "workflow automation interface"
+      - "dark mode dashboard"
+      - "visual programming"
+    influence_notes:
+      - "Unreal Engine Blueprint editor"
+      - "Zapier visual editor but dark and cyber"
+      - "Framer aesthetic"
+    mood_reference: "Hyper-competent, organized, effortless control."
+    camera: "Straight-on orthographic view, sharp UI details."
+    variants:
+      - "Isometric angle showing slight 3D depth of the cards"
+      - "Zoomed in on the central AI node"
+
+  - id: "ui-analytics-dashboard"
+    title: "Terminal Analytics Command Center"
+    prompt: |
+      A futuristic analytics dashboard focusing on data density. Dark mode interface on a void black background. Features sharp, high-contrast line charts in bio-lume green (#C7FF69) plotting efficiency metrics. To the side, a 'terminal' log window displays scrolling text logs in a monospace font (Greeking/simulated text), glowing slightly like an old CRT monitor but with 4K sharpness. Numbers are large, white, and crisp. The layout is modular, grid-based, and utilitarian. No decorative fluff, just raw data visualization.
+    background: "--pure black background, isolated UI element"
+    reference_keywords:
+      - "cyberpunk dashboard"
+      - "terminal interface"
+      - "data visualization dark mode"
+      - "financial trading terminal"
+    influence_notes:
+      - "Bloomberg terminal aesthetic but modern"
+      - "Sci-fi spaceship status screen"
+    mood_reference: "Surgical precision, omniscient view, high stakes."
+    camera: "Orthographic or slight perspective tilt."
+
+  - id: "concept-chaos"
+    title: "Abstract Entangled Chaos"
+    prompt: |
+      Abstract 3D composition representing 'Manual Work Chaos'. A dense, tangled knot of dark grey wires, crumpled papers, and chaotic geometric shapes floating in a void. The materials are matte, non-reflective, and feel heavy or burdened. The lighting is dim, uneven, and shadowy, creating a sense of confusion and blockage. No green accents—just shades of grey and black. It looks like a systemic blockage or a 'Gordian knot' of bureaucracy. Cinematic lighting, 8k, unreal engine 5 render style.
+    background: "--no background, isolated object, transparent canvas"
+    reference_keywords:
+      - "tangled wires"
+      - "abstract chaos"
+      - "messy knot 3D"
+      - "bureaucratic mess"
+    influence_notes:
+      - "Abstract sculpture of disorder"
+      - "Cable management nightmares"
+    mood_reference: "Frustrating, heavy, stuck, overwhelming."
+    camera: "Telephoto lens, compression of depth to enhance clutter feel."
+
+  - id: "concept-order"
+    title: "Abstract Aligned Precision"
+    prompt: |
+      Abstract 3D composition representing 'Automated Order'. The chaotic wires from the previous image have been straightened and transformed into perfectly parallel, glowing beams of light. Vertical and horizontal lines interact in a perfect 3D grid structure. The beams are bright bio-lume green (#C7FF69) and signal white, cutting through the darkness with laser precision. Floating sorted data blocks move along these rails. The composition represents flow, speed, and zero friction. Cinematic lighting, 8k, unreal engine 5 render style.
+    background: "--no background, isolated object, transparent canvas"
+    reference_keywords:
+      - "laser beams"
+      - "fiber optics"
+      - "perfect organization"
+      - "data highway"
+    influence_notes:
+      - "Fiber optic macro photography"
+      - "Futuristic city traffic streams"
+    mood_reference: "Efficient, fast, frictionless, perfect."
+    camera: "Dynamic angle, looking along the lines of flow."
+
+generation_notes:
+  dna_consistency: "All prompts strictly follow the Void Black / Bio-Lume Green palette."
+  style_cohesion: "Unified 'Hacker-Chic Enterprise' aesthetic across UI and abstract 3D."
+  recommended_order: ["asset-hero-bg", "asset-texture-noise", "ui-workflow-builder", "ui-analytics-dashboard", "concept-chaos", "concept-order"]
