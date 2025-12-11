@@ -1,3 +1,8 @@
+# Bonnie frontend builder demo
+This is a demo of (Bonnie)[https://bonniebuilds.com] creating a website from a single prompt.
+
+
+
 # Design System Starter
 
 Vite + React + Tailwind starter template for design system generation.
@@ -44,14 +49,3 @@ pnpm install   # Install dependencies
 pnpm dev       # Start dev server on port 3000
 pnpm build     # Production build
 ```
-
-## How It Works
-
-1. The design agent analyzes a reference site
-2. Extracts visual DNA (colors, typography, spacing, shadows)
-3. Updates `index.css` with the design tokens
-4. Creates components in `components/ui/`
-5. Builds landing page sections in `sections/`
-6. Assembles everything in `routes/index.tsx`
-
-The Vite dev server hot-reloads as files change, so you see updates live.

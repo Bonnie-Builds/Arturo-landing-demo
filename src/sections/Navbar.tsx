@@ -13,7 +13,10 @@ export function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 h-20 transition-all duration-300 bg-[#050505]/80 backdrop-blur-md border-b border-white/5">
+    <nav className="fixed top-0 left-0 right-0 z-50 h-30 transition-all duration-300 bg-[#050505]/80 backdrop-blur-md border-b border-white/5 flex flex-col">
+      <a href="https://bonniebuilds.com" className='h-10 bg-[#e6ff00] p-2 flex items-center justify-center'>
+        <p>Fully Automated Bonnie build demo. Click to learn more</p>
+      </a>
       <div className="max-w-[1440px] mx-auto px-6 h-full flex items-center justify-between">
         {/* Logo */}
         <a href="/" className="text-xl font-bold tracking-tighter text-white hover:opacity-80 transition-opacity">
